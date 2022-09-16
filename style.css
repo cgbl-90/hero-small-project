@@ -32,6 +32,7 @@ body {
     place-items: center;
     padding-bottom: 4px grey;
     background: rgb(74, 208, 190);
+    width: 100%;
 }
 
 .menu {
@@ -62,7 +63,6 @@ body {
 
 .cta {
     font-size: 5rem;
-    flex-wrap: nowrap;
     padding: 4rem 0;
 }
 
@@ -73,27 +73,22 @@ body {
 }
 
 .hero {
-    display: flex;
+    display: grid;
     width: 100%;
-    flex-direction: row;
-    column-width: 50%;
+    grid-template-columns: auto 1fr;
     color: rgb(32, 174, 155);
     padding: 3rem;
 }
 
 .col {
-    width: 50%;
     height: 90vh;
-}
-
-.col:first-child {
-    padding-left: 2rem;
+    display: block;
 }
 
 img {
-    max-width: 600px;
-    width: auto;
-    margin-top: 4rem;
+    width: 100%;
+    min-width: 350px;
+    margin: 2rem;
 }
 
 a {
@@ -116,4 +111,15 @@ a:visited {
 a:focus,
 a:hover {
     background-color: rgb(248, 248, 47);
+}
+
+@media (max-width: 700px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    img {
+        padding: 0;
+        margin: 0;
+    }
 }
